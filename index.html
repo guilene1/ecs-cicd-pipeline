@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume</title>
+<style>
+  :root {
+    --ink: #1a1f2b;
+    --muted: #5b6472;
+    --accent: #0f6dbd;
+    --accent-soft: #eaf3fb;
+    --line: #dfe4ea;
+    --bg: #ffffff;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #eef1f5;
+    font-family: "Segoe UI", Calibri, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .page {
+    max-width: 850px;
+    margin: 32px auto;
+    background: var(--bg);
+    padding: 48px 56px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+  }
+
+  header.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  header.resume-header h1 {
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+  }
+
+  header.resume-header .title {
+    margin-top: 4px;
+    font-size: 16px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .contact {
+    text-align: right;
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+
+  .contact a { color: var(--muted); text-decoration: none; }
+  .contact a:hover { color: var(--accent); }
+
+  section { margin-bottom: 26px; }
+
+  h2.section-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+    margin: 0 0 14px 0;
+  }
+
+  .summary {
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 28px;
+  }
+
+  .skill-row {
+    font-size: 13.5px;
+  }
+
+  .skill-row .label {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .skill-row .value {
+    color: var(--muted);
+  }
+
+  .job {
+    margin-bottom: 20px;
+  }
+  .job:last-child { margin-bottom: 0; }
+
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .job-title {
+    font-size: 15.5px;
+    font-weight: 700;
+  }
+
+  .job-company {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .job-dates {
+    font-size: 13px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .job-location {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  ul.job-bullets {
+    margin: 6px 0 0 0;
+    padding-left: 18px;
+  }
+
+  ul.job-bullets li {
+    font-size: 13.5px;
+    margin-bottom: 5px;
+    color: var(--ink);
+  }
+
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+  }
+
+  .badge {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .cert-list, .edu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13.5px;
+  }
+
+  .cert-list li, .edu-list li {
+    margin-bottom: 8px;
+  }
+
+  .cert-list .cert-name, .edu-list .edu-degree {
+    font-weight: 600;
+  }
+
+  .cert-list .cert-meta, .edu-list .edu-meta {
+    color: var(--muted);
+    font-size: 12.5px;
+  }
+
+  @media (max-width: 640px) {
+    .page { padding: 28px 20px; }
+    header.resume-header { flex-direction: column; }
+    .contact { text-align: left; }
+    .skills-grid, .two-col { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; padding: 24px 36px; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="resume-header">
+    <div>
+      <h1>Your Name</h1>
+      <div class="title">Senior DevOps &amp; Cloud Engineer</div>
+    </div>
+    <div class="contact">
+      <div>guileneerna@gmail.com</div>
+      <div>+1 (555) 123-4567</div>
+      <div>City, Country</div>
+      <div><a href="#">linkedin.com/in/yourname</a> &middot; <a href="#">github.com/yourname</a></div>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="section-title">Summary</h2>
+    <p class="summary">
+      DevOps and Cloud Engineer with 8+ years of experience designing, automating, and operating
+      highly available infrastructure on AWS. Specialized in containerized workloads (ECS/EKS),
+      Infrastructure as Code (Terraform), and CI/CD pipeline design that cuts deployment time and
+      failure rates. Proven track record leading cloud migrations, building self-service platforms
+      for engineering teams, and driving cost optimization initiatives that reduced cloud spend by
+      double digits. Comfortable owning systems end-to-end — from architecture through on-call.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Core Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-row"><span class="label">Cloud Platforms:</span> <span class="value">AWS (ECS, EKS, Lambda, RDS, VPC, IAM, S3, CloudFront), Azure basics</span></div>
+      <div class="skill-row"><span class="label">IaC:</span> <span class="value">Terraform, CloudFormation, Pulumi</span></div>
+      <div class="skill-row"><span class="label">Containers &amp; Orchestration:</span> <span class="value">Docker, Kubernetes, ECS Fargate, Helm</span></div>
+      <div class="skill-row"><span class="label">CI/CD:</span> <span class="value">GitHub Actions, GitLab CI, Jenkins, ArgoCD</span></div>
+      <div class="skill-row"><span class="label">Monitoring &amp; Observability:</span> <span class="value">CloudWatch, Prometheus, Grafana, Datadog, ELK</span></div>
+      <div class="skill-row"><span class="label">Scripting &amp; Languages:</span> <span class="value">Python, Bash, Go, YAML</span></div>
+      <div class="skill-row"><span class="label">Security &amp; Compliance:</span> <span class="value">IAM least-privilege, Secrets Manager, Vault, SOC2 audits</span></div>
+      <div class="skill-row"><span class="label">Other:</span> <span class="value">Linux administration, networking, on-call/incident response</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Senior DevOps Engineer</span> &mdash; <span class="job-company">Company Name</span></div>
+        <div class="job-dates">Jan 2022 &ndash; Present</div>
+      </div>
+      <div class="job-location">City, Country</div>
+      <ul class="job-bullets">
+        <li>Led migration of monolithic services to ECS Fargate, reducing infrastructure costs by 30% and deployment time from 45 to 8 minutes.</li>
+        <li>Designed and maintained Terraform modules used across 12+ microservices, standardizing environment provisioning org-wide.</li>
+        <li>Built CI/CD pipelines in GitHub Actions with automated testing, security scanning, and blue/green deployments.</li>
+        <li>Implemented centralized observability (Prometheus/Grafana) that cut mean-time-to-detect incidents by 60%.</li>
+        <li>Mentored 3 junior engineers on cloud best practices and on-call procedures.</li>
+      </ul>
+      <div class="badge-row">
+        <span class="badge">AWS ECS</span>
+        <span class="badge">Terraform</span>
+        <span class="badge">GitHub Actions</span>
+        <span class="badge">Kubernetes</span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">DevOps Engineer</span> &mdash; <span class="job-company">Previous Company</span></div>
+        <div class="job-dates">Jun 2019 &ndash; Dec 2021</div>
+      </div>
+      <div class="job-location">City, Country</div>
+      <ul class="job-bullets">
+        <li>Automated infrastructure provisioning with Terraform and Ansible, eliminating manual server setup.</li>
+        <li>Migrated on-prem workloads to AWS, achieving 99.95% uptime SLA across production services.</li>
+        <li>Introduced Docker-based local dev environments, reducing new-hire onboarding time by 50%.</li>
+        <li>Managed Kubernetes clusters (EKS) supporting 40+ microservices in production.</li>
+      </ul>
+      <div class="badge-row">
+        <span class="badge">AWS</span>
+        <span class="badge">EKS</span>
+        <span class="badge">Ansible</span>
+        <span class="badge">Docker</span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Systems / Cloud Engineer</span> &mdash; <span class="job-company">Earlier Company</span></div>
+        <div class="job-dates">Aug 2017 &ndash; May 2019</div>
+      </div>
+      <div class="job-location">City, Country</div>
+      <ul class="job-bullets">
+        <li>Supported AWS infrastructure for production and staging environments, handling provisioning and patching.</li>
+        <li>Wrote Bash/Python automation scripts to replace manual operational tasks, saving ~10 hours/week of engineering time.</li>
+        <li>Participated in on-call rotation, responding to and resolving production incidents.</li>
+      </ul>
+      <div class="badge-row">
+        <span class="badge">AWS EC2</span>
+        <span class="badge">Bash</span>
+        <span class="badge">Python</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="two-col">
+    <section>
+      <h2 class="section-title">Certifications</h2>
+      <ul class="cert-list">
+        <li>
+          <div class="cert-name">AWS Certified DevOps Engineer &ndash; Professional</div>
+          <div class="cert-meta">Amazon Web Services, 2023</div>
+        </li>
+        <li>
+          <div class="cert-name">AWS Certified Solutions Architect &ndash; Associate</div>
+          <div class="cert-meta">Amazon Web Services, 2021</div>
+        </li>
+        <li>
+          <div class="cert-name">Certified Kubernetes Administrator (CKA)</div>
+          <div class="cert-meta">CNCF, 2022</div>
+        </li>
+        <li>
+          <div class="cert-name">HashiCorp Certified: Terraform Associate</div>
+          <div class="cert-meta">HashiCorp, 2022</div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="section-title">Education</h2>
+      <ul class="edu-list">
+        <li>
+          <div class="edu-degree">B.Sc. in Computer Science</div>
+          <div class="edu-meta">University Name, 2013 &ndash; 2017</div>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+</div>
+
+</body>
+</html>
